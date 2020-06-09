@@ -13,20 +13,20 @@ public class Main {
         server.createQueue(QUEUE_1);
         server.createQueue(QUEUE_2);
         //创建 Listener 1，监听 queue 1
-        cooperation.Listener listener1 = new cooperation.Listener(server, "listener1");
+        Listener listener1 = new Listener(server, "listener1");
         listener1.listen(QUEUE_1);
         //创建 Listener 2，监听 queue2
-        cooperation.Listener listener2 = new cooperation.Listener(server, "listener2");
+        Listener listener2 = new Listener(server, "listener2");
         listener2.listen(QUEUE_2);
         Thread.sleep(100);
         //创建 Listener 3，监听 queue2
-        cooperation.Listener listener3 = new cooperation.Listener(server, "listener3");
+        Listener listener3 = new Listener(server, "listener3");
         listener3.listen(QUEUE_2);
         Thread.sleep(100);
-        cooperation.Listener listener4 = new cooperation.Listener(server, "listener4");
+        Listener listener4 = new Listener(server, "listener4");
         listener4.listen(QUEUE_2);
         //创建 Publisher
-        cooperation.Publisher publisher = new cooperation.Publisher(server);
+        Publisher publisher = new Publisher(server);
 
         //在主线程做 发送消息、关闭 Listener 等操作
         Scanner scanner = new Scanner(System.in);
